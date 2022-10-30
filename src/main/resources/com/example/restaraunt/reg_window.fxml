@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="440.0" prefWidth="520.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaraunt.RegistrationController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <AnchorPane prefHeight="412.0" prefWidth="519.0" style="-fx-background-color: FFFACD;">
+        <children>
+            <Text fill="#681717" layoutX="55.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Managment Restaraunt Application">
+                <font>
+                    <Font name="Candara Italic" size="30.0" />
+                </font>
+            </Text>
+            <AnchorPane layoutY="82.0" prefHeight="340.0" prefWidth="520.0" style="-fx-background-color: FFEFD5;">
+                <children>
+                    <Button fx:id="registrationButtonTwo" layoutX="196.0" layoutY="281.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" text="Registarion" />
+                    <PasswordField layoutX="331.0" layoutY="217.0" promptText="Password" />
+                    <Text fill="#681717" layoutX="41.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration">
+                        <font>
+                            <Font name="Candara Italic" size="30.0" />
+                        </font>
+                    </Text>
+               <TextField layoutX="42.0" layoutY="158.0" promptText="Name" />
+               <TextField layoutX="42.0" layoutY="217.0" promptText="Surname" />
+               <DatePicker layoutX="331.0" layoutY="158.0" prefHeight="25.0" prefWidth="149.0" promptText="Date of birth" />
+               <ImageView fitHeight="131.0" fitWidth="142.0" layoutX="340.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@images/registration.png" />
+                  </image>
+               </ImageView>
+                </children>
+            </AnchorPane>
+        </children>
+    </AnchorPane>
+
+    <Label fx:id="welcomeText" />
+</VBox>
