@@ -24,9 +24,8 @@ public class RegistrationController {
     @FXML
     private Label welcomeText;
 
-
-    void intialize () {
-
+    @FXML
+    void initialize() {
         DB_Handler db_handler = new DB_Handler();
         registrationButtonTwo.setOnAction(event -> {
             db_handler.registrationUsers(signUPname.getText(),
