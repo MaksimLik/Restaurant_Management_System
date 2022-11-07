@@ -12,10 +12,10 @@ public class DB_Handler extends Configurations {
 
     public Connection getDbConnection()
         throws ClassNotFoundException, SQLException {
-        String connecrionString = "jbdc:mysql://" + dbHost + ":"
+        String connecrionString = "jdbc:mysql://" + dbHost + ":"
                 + dbPort + "/" + dbName;
 
-        Class.forName("com.mysql.jdbc.Driver"); //com.mysql.cj.jdbc.Driver maybe
+       // Class.forName("com.mysql.cj.jbdc.Driver"); //com.mysql.cj.jdbc.Driver maybe
         dbConnection = DriverManager.getConnection(connecrionString,
                 dbUser, dbPass);
 
