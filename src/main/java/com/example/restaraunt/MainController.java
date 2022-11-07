@@ -36,6 +36,8 @@ public class MainController {
 
     @FXML
     void initialize() {
+
+
         logINbutton.setOnAction(event -> {
             String loginText = log_field.getText().trim();
             String loginPassword = logINbutton.getText().trim();
