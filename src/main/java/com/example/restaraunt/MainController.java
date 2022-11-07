@@ -9,22 +9,24 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
 public class MainController {
 
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
     private ImageView image_cafe;
 
     @FXML
-    private URL location;
+    private Button logINbutton;
 
     @FXML
-    private Button logINbutton;
+    private TextField log_field;
+
+    @FXML
+    private PasswordField password_field;
 
     @FXML
     private Button registrationButton;
@@ -35,7 +37,13 @@ public class MainController {
     @FXML
     void initialize() {
         logINbutton.setOnAction(event -> {
-        
+            String loginText = log_field.getText().trim();
+            String loginPassword = logINbutton.getText().trim();
+
+            if(!loginText.equals("") && !loginPassword.equals(""))
+                loginUser(loginText, loginPassword);
+            else
+                System.out.println("Login or/and password is empty!");
         });
 
 
@@ -55,6 +63,10 @@ public class MainController {
            stage.setScene(new Scene(root));
            stage.showAndWait();
        });
+
+    }
+
+    private void loginUser(String loginText, String loginPassword) {
 
     }
 

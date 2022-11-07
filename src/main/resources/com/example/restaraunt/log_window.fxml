@@ -32,8 +32,8 @@
                </ImageView>
                <Button fx:id="registrationButton" layoutX="349.0" layoutY="278.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" text="Registarion" />
                <Button fx:id="logINbutton" layoutX="381.0" layoutY="192.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="64.0" text="Log in" />
-               <PasswordField layoutX="338.0" layoutY="140.0" promptText="Password" />
-               <TextField layoutX="338.0" layoutY="91.0" promptText="Login" />
+               <PasswordField fx:id="password_field" layoutX="338.0" layoutY="140.0" promptText="Password" />
+               <TextField fx:id="log_field" layoutX="338.0" layoutY="91.0" promptText="Login" />
                <Text fill="#681717" layoutX="373.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log in ">
                   <font>
                      <Font name="Candara Italic" size="30.0" />
