@@ -6,6 +6,7 @@ module com.example.restaraunt {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens com.example.restaraunt to javafx.fxml;
     exports com.example.restaraunt;

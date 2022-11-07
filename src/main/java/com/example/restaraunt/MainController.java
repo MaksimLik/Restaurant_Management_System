@@ -34,6 +34,11 @@ public class MainController {
 
     @FXML
     void initialize() {
+        logINbutton.setOnAction(event -> {
+        
+        });
+
+
        registrationButton.setOnAction(event -> {
            registrationButton.getScene().getWindow().hide();
            FXMLLoader loader = new FXMLLoader();
