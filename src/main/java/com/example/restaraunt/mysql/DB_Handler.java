@@ -11,7 +11,7 @@ public class DB_Handler extends Configurations {
         String connecrionString = "jdbc:mysql://" + dbHost + ":"
                 + dbPort + "/" + dbName;
 
-       // Class.forName("com.mysql.cj.jbdc.Driver"); //com.mysql.cj.jdbc.Driver maybe
+        Class.forName("com.mysql.cj.jdbc.Driver"); //com.mysql.cj.jdbc.Driver maybe
         dbConnection = DriverManager.getConnection(connecrionString,
                 dbUser, dbPass);
 
@@ -40,7 +40,25 @@ public class DB_Handler extends Configurations {
         }
 
     }
+    public ResultSet getUser(User user) {
+        ResultSet resultSet = null;
+        String select = "SELECT * from " + Constants.USER_TABLE +
+                " WHERE " + Constants.USER_NAME + "=? AND " +
+                Constants.USER_PASSWORD + "=?";
 
-  //  public ResultSet getUser( user)
+        try {
+            PreparedStatement preparedStatement = getDbConnection().prepareStatement(select);
+            preparedStatement.setString(1, user.getName());
+            preparedStatement.setString(2, user.getPassword());
+
+           resultSet = preparedStatement.executeQuery();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
 
 }

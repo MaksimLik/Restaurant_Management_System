@@ -1,8 +1,11 @@
 package com.example.restaraunt;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.example.restaraunt.mysql.DB_Handler;
+import com.example.restaraunt.mysql.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -40,7 +43,7 @@ public class MainController {
 
         logINbutton.setOnAction(event -> {
             String loginText = log_field.getText().trim();
-            String loginPassword = logINbutton.getText().trim();
+            String loginPassword = password_field.getText().trim();
 
             if(!loginText.equals("") && !loginPassword.equals(""))
                 loginUser(loginText, loginPassword);
@@ -69,7 +72,25 @@ public class MainController {
     }
 
     private void loginUser(String loginText, String loginPassword) {
+        DB_Handler db_handler = new DB_Handler();
+        User user = new User();
+        user.setName(loginText);
+        user.setPassword(loginPassword);
+        ResultSet resultSet = db_handler.getUser(user);
 
+       int counter = 0;
+
+       while(true) {
+           try {
+               if (!resultSet.next()) break;
+           } catch (SQLException e) {
+               throw new RuntimeException(e);
+           }
+           counter++;
+       }
+       if(counter >= 1){
+           System.out.println("Success!");
+       }
     }
 
 }
