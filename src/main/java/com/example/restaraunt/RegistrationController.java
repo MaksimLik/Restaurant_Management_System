@@ -1,6 +1,7 @@
 package com.example.restaraunt;
 
 import com.example.restaraunt.mysql.DB_Handler;
+import com.example.restaraunt.mysql.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -26,10 +27,23 @@ public class RegistrationController {
 
     @FXML
     void initialize() {
-        DB_Handler db_handler = new DB_Handler();
+
+
         registrationButtonTwo.setOnAction(event -> {
-            db_handler.registrationUsers(signUPname.getText(),
-                    signUPsurname.getText(), signUPbd.getText(), signUPpassword.getText());
+            signUPnewUser();
         });
+    }
+
+    private void signUPnewUser() {
+        DB_Handler db_handler = new DB_Handler();
+
+        String name = signUPname.getText();
+        String surname = signUPsurname.getText();
+        String birthD = signUPbd.getText();
+        String password = signUPpassword.getText();
+
+        User user = new User(name, surname, birthD, password);
+
+        db_handler.registrationUsers(user);
     }
 }
