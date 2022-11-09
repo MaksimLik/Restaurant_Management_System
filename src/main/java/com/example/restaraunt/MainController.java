@@ -51,6 +51,10 @@ public class MainController {
                 System.out.println("Login or/and password is empty!");
         });
 
+    //    logINbutton.setOnAction(event -> {
+    //        openNewScene("control_window.fxml");
+    //    });
+
 
        registrationButton.setOnAction(event -> {
            registrationButton.getScene().getWindow().hide();
@@ -89,8 +93,25 @@ public class MainController {
            counter++;
        }
        if(counter >= 1){
-           System.out.println("Success!");
+           openNewScene("control_window.fxml");
        }
+    }
+
+    public void openNewScene(String window) {
+        registrationButton.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(window));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 
 }
