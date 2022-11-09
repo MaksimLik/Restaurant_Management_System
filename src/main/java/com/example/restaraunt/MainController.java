@@ -10,10 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
@@ -44,11 +41,14 @@ public class MainController {
         logINbutton.setOnAction(event -> {
             String loginText = log_field.getText().trim();
             String loginPassword = password_field.getText().trim();
-
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             if(!loginText.equals("") && !loginPassword.equals(""))
                 loginUser(loginText, loginPassword);
             else
-                System.out.println("Login or/and password is empty!");
+                alert.setTitle("WARNING");
+                alert.setHeaderText("Please check your username and/or password.");
+                alert.setContentText("Maybe you are not registered.");
+                alert.showAndWait();
         });
 
     //    logINbutton.setOnAction(event -> {
