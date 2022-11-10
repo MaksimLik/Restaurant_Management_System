@@ -12,20 +12,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" prefHeight="440.0" prefWidth="520.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaraunt.MainController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.restaraunt.LogController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <AnchorPane prefHeight="412.0" prefWidth="519.0" style="-fx-background-color: FF7F50;">
+   <AnchorPane prefHeight="422.0" prefWidth="580.0" style="-fx-background-color: FF7F50;">
       <children>
-         <Text fill="#681717" layoutX="55.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Managment Restaraunt Application">
+         <Text fill="#681717" layoutX="73.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Managment Restaraunt Application">
             <font>
                <Font name="Candara Italic" size="30.0" />
             </font>
          </Text>
-         <AnchorPane layoutY="82.0" prefHeight="340.0" prefWidth="520.0" style="-fx-background-color: FFA500;">
+         <AnchorPane layoutY="76.0" prefHeight="346.0" prefWidth="583.0" style="-fx-background-color: FFA500;">
             <children>
-               <ImageView fx:id="image_cafe" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fx:id="image_cafe" fitHeight="150.0" fitWidth="200.0" layoutX="82.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                      <Image url="@images/images1.png" />
                   </image>

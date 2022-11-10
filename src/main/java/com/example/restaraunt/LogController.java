@@ -14,7 +14,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
-public class MainController {
+public class LogController {
 
     @FXML
     private ImageView image_cafe;

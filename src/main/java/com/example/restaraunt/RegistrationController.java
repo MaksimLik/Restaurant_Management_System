@@ -43,7 +43,6 @@ public class RegistrationController {
         String surname = signUPsurname.getText();
         Date birthD = Date.valueOf(signUPbd.getValue());
         String password = signUPpassword.getText();
-
         User user = new User(name, surname, birthD, password);
 
         db_handler.registrationUsers(user);
