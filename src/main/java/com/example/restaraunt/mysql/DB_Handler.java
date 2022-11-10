@@ -11,7 +11,7 @@ public class DB_Handler extends Configurations {
         String connecrionString = "jdbc:mysql://" + dbHost + ":"
                 + dbPort + "/" + dbName;
 
-        Class.forName("com.mysql.cj.jdbc.Driver"); //com.mysql.cj.jdbc.Driver maybe
+       // Class.forName("com.mysql.cj.jdbc.Driver"); //com.mysql.cj.jdbc.Driver maybe
         dbConnection = DriverManager.getConnection(connecrionString,
                 dbUser, dbPass);
 
