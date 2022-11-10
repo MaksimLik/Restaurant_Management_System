@@ -26,7 +26,7 @@
             </Text>
             <AnchorPane layoutY="82.0" prefHeight="340.0" prefWidth="520.0" style="-fx-background-color: FFEFD5;">
                 <children>
-                    <Button fx:id="registrationButtonTwo" layoutX="196.0" layoutY="281.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" text="Registarion" />
+                    <Button fx:id="registrationButtonTwo" layoutX="342.0" layoutY="265.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" text="Registarion" />
                     <PasswordField fx:id="signUPpassword" layoutX="331.0" layoutY="217.0" promptText="Password" />
                     <Text fill="#681717" layoutX="41.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration">
                         <font>
@@ -41,6 +41,7 @@
                   </image>
                </ImageView>
                <DatePicker fx:id="signUPbd" layoutX="328.0" layoutY="158.0" prefHeight="25.0" prefWidth="151.0" promptText="Date of your bithday" />
+               <Button fx:id="OutButton" layoutX="52.0" layoutY="265.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="128.0" text="Log out" />
                 </children>
             </AnchorPane>
         </children>

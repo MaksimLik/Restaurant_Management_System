@@ -69,6 +69,7 @@ public class LogController {
 
            Parent root = loader.getRoot();
            Stage stage = new Stage();
+           //stage.close();
            stage.setScene(new Scene(root));
            stage.setResizable(false);
            stage.showAndWait();

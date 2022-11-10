@@ -15,6 +15,9 @@ import java.sql.Date;
 public class RegistrationController {
 
     @FXML
+    private Button OutButton;
+
+    @FXML
     private Button registrationButtonTwo;
 
     @FXML
@@ -39,6 +42,12 @@ public class RegistrationController {
         registrationButtonTwo.setOnAction(event -> {
             signUPnewUser();
         });
+
+        OutButton.setOnAction(event -> {
+            openNewWindow("log_window.fxml");
+        });
+
+
     }
 
     private void signUPnewUser() {
@@ -51,7 +60,6 @@ public class RegistrationController {
         User user = new User(name, surname, birthD, password);
 
         db_handler.registrationUsers(user);
-        openNewWindow("log_window.fxml");
 
     }
 
@@ -69,7 +77,9 @@ public class RegistrationController {
         Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         stage.showAndWait();
+   //     stage.close();
     }
 
 }
