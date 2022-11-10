@@ -1,15 +1,17 @@
 package com.example.restaraunt.mysql;
 
+import java.sql.Date;
+
 public class User {
     private String name;
     private String surname;
-    private String Bithd;
+    private Date Bithd;
     private String password;
 
-    public User(String name, String surname, String bithd, String password) {
+    public User(String name, String surname, Date bithd, String password) {
         this.name = name;
         this.surname = surname;
-        Bithd = bithd;
+        this.Bithd = bithd;
         this.password = password;
     }
 
@@ -32,11 +34,11 @@ public class User {
         this.surname = surname;
     }
 
-    public String getBithd() {
+    public Date getBithd() {
         return Bithd;
     }
 
-    public void setBithd(String bithd) {
+    public void setBithd(Date bithd) {
         Bithd = bithd;
     }
 

@@ -28,7 +28,7 @@ public class DB_Handler extends Configurations {
             PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getSurname());
-            preparedStatement.setString(3, user.getBithd());
+            preparedStatement.setDate(3, user.getBithd());
             preparedStatement.setString(4, user.getPassword());
 
             preparedStatement.executeUpdate();

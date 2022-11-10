@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -39,7 +40,7 @@
                      <Image url="@images/registration.png" />
                   </image>
                </ImageView>
-               <TextField fx:id="signUPbd" layoutX="331.0" layoutY="158.0" promptText="Date of your bithday" />
+               <DatePicker fx:id="signUPbd" layoutX="328.0" layoutY="158.0" prefHeight="25.0" prefWidth="151.0" promptText="Date of your bithday" />
                 </children>
             </AnchorPane>
         </children>

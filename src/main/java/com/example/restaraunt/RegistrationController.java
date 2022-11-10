@@ -5,13 +5,15 @@ import com.example.restaraunt.mysql.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.sql.Date;
+
 public class RegistrationController {
 
     @FXML
     private Button registrationButtonTwo;
 
     @FXML
-    private TextField signUPbd;
+    private DatePicker signUPbd;
 
     @FXML
     private TextField signUPname;
@@ -39,7 +41,7 @@ public class RegistrationController {
 
         String name = signUPname.getText();
         String surname = signUPsurname.getText();
-        String birthD = signUPbd.getText();
+        Date birthD = Date.valueOf(signUPbd.getValue());
         String password = signUPpassword.getText();
 
         User user = new User(name, surname, birthD, password);
