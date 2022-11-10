@@ -14,6 +14,7 @@ public class MainApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 520, 440);
         stage.setTitle("Restaurant!");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

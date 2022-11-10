@@ -70,6 +70,7 @@ public class LogController {
            Parent root = loader.getRoot();
            Stage stage = new Stage();
            stage.setScene(new Scene(root));
+           stage.setResizable(false);
            stage.showAndWait();
        });
 
@@ -97,7 +98,7 @@ public class LogController {
        }
     }
 
-    public void openNewScene(String window) {
+    private void openNewScene(String window) {
         registrationButton.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
@@ -111,6 +112,7 @@ public class LogController {
         Parent root = loader.getRoot();
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
+        stage.setResizable(false);
         stage.showAndWait();
     }
 

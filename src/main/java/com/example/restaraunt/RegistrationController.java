@@ -3,8 +3,13 @@ package com.example.restaraunt;
 import com.example.restaraunt.mysql.DB_Handler;
 import com.example.restaraunt.mysql.User;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.Date;
 
 public class RegistrationController {
@@ -46,5 +51,25 @@ public class RegistrationController {
         User user = new User(name, surname, birthD, password);
 
         db_handler.registrationUsers(user);
+        openNewWindow("log_window.fxml");
+
     }
+
+    private void openNewWindow(String window) {
+        registrationButtonTwo.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(window));
+
+        try {
+            loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
+    }
+
 }
