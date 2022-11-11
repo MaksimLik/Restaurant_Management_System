@@ -100,7 +100,6 @@ public class LogController {
     }
 
     private void openNewScene(String window) {
-        registrationButton.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
 

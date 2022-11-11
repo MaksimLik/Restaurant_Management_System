@@ -64,8 +64,7 @@ public class RegistrationController {
     }
 
     private void openNewWindow(String window) {
-        registrationButtonTwo.getScene().getWindow().hide();
-        FXMLLoader loader = new FXMLLoader();
+        /*  FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
 
         try {
@@ -74,12 +73,26 @@ public class RegistrationController {
             throw new RuntimeException(e);
         }
 
-        Parent root = loader.getRoot();
+        Parent root = null;
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
+        stage.showAndWait(); */
+
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource(window));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Restaurant!");
+        stage.setScene(new Scene(root));
+        stage.setResizable(false);
         stage.showAndWait();
-   //     stage.close();
+
+
     }
 
 }
