@@ -51,16 +51,20 @@ public class LogController {
         logINbutton.setOnAction(event -> {
             String loginText = log_field.getText().trim();
             String loginPassword = password_field.getText().trim();
-            Alert alert = new Alert(Alert.AlertType.WARNING);
             if(!loginText.equals("") && !loginPassword.equals(""))
                 loginUser(loginText, loginPassword);
             else
-                alert.setTitle("WARNING");
-                alert.setHeaderText("Please check your username and/or password.");
-                alert.setContentText("Maybe you are not registered.");
-                alert.showAndWait();
+               alertWarning();
         });
 
+    }
+
+    private void alertWarning() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("WARNING");
+        alert.setHeaderText("Please check your username and/or password.");
+        alert.setContentText("Maybe you are not registered.");
+        alert.showAndWait();
     }
 
     private void loginUser(String loginText, String loginPassword) {

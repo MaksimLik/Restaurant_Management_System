@@ -4,14 +4,10 @@ import com.example.restaraunt.mysql.DB_Handler;
 import com.example.restaraunt.mysql.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.sql.Date;
 
 public class RegistrationController {
@@ -53,6 +49,7 @@ public class RegistrationController {
 
         registrationButtonTwo.setOnAction(event -> {
             signUPnewUser();
+            successRegistration();
         });
 
     }
@@ -68,6 +65,14 @@ public class RegistrationController {
 
         db_handler.registrationUsers(user);
 
+    }
+
+    private void successRegistration() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("INFORMATION");
+        alert.setHeaderText("Successfully.");
+        alert.setContentText("You have been registered successfully.");
+        alert.showAndWait();
     }
 
    /*  private void openNewWindow(String window) {
