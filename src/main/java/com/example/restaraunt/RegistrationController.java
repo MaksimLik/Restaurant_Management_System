@@ -2,8 +2,10 @@ package com.example.restaraunt;
 
 import com.example.restaraunt.mysql.DB_Handler;
 import com.example.restaraunt.mysql.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -35,18 +37,23 @@ public class RegistrationController {
     @FXML
     private Label welcomeText;
 
+    private Scene firstScene;
+
+    public void setFirstScene(Scene scene) {
+        firstScene = scene;
+    }
+
+    public void openFirstScene(ActionEvent actionEvent) {
+        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        primaryStage.setScene(firstScene);
+    }
+
     @FXML
     void initialize() {
-
 
         registrationButtonTwo.setOnAction(event -> {
             signUPnewUser();
         });
-
-        OutButton.setOnAction(event -> {
-            openNewWindow("log_window.fxml");
-        });
-
 
     }
 
@@ -63,7 +70,7 @@ public class RegistrationController {
 
     }
 
-    private void openNewWindow(String window) {
+   /*  private void openNewWindow(String window) {
         /*  FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(window));
 
@@ -77,7 +84,7 @@ public class RegistrationController {
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setResizable(false);
-        stage.showAndWait(); */
+        stage.showAndWait();
 
 
         Parent root = null;
@@ -93,6 +100,6 @@ public class RegistrationController {
         stage.showAndWait();
 
 
-    }
+    } */
 
 }

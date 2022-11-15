@@ -6,8 +6,10 @@ import java.sql.SQLException;
 
 import com.example.restaraunt.mysql.DB_Handler;
 import com.example.restaraunt.mysql.User;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -33,10 +35,18 @@ public class LogController {
 
     @FXML
     private Label welcomeText;
+    private Scene secondScene;
+
+    public void setSecondScene(Scene scene) {
+        secondScene = scene;
+    }
+    public void openSecondScene(ActionEvent actionEvent) {
+        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        primaryStage.setScene(secondScene);
+    }
 
     @FXML
     void initialize() {
-
 
         logINbutton.setOnAction(event -> {
             String loginText = log_field.getText().trim();
@@ -50,30 +60,6 @@ public class LogController {
                 alert.setContentText("Maybe you are not registered.");
                 alert.showAndWait();
         });
-
-    //    logINbutton.setOnAction(event -> {
-    //        openNewScene("control_window.fxml");
-    //    });
-
-
-       registrationButton.setOnAction(event -> {
-           registrationButton.getScene().getWindow().hide();
-           FXMLLoader loader = new FXMLLoader();
-           loader.setLocation(getClass().getResource("reg_window.fxml"));
-
-           try {
-               loader.load();
-           } catch (IOException e) {
-               throw new RuntimeException(e);
-           }
-
-           Parent root = loader.getRoot();
-           Stage stage = new Stage();
-           //stage.close();
-           stage.setScene(new Scene(root));
-           stage.setResizable(false);
-           stage.showAndWait();
-       });
 
     }
 
